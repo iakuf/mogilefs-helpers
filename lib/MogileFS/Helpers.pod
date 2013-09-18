@@ -1,0 +1,55 @@
+__END__
+
+=pod
+ 
+=encoding utf8
+
+=head1 NAME
+
+MogileFS::Helpers - 帮助 MogileFS 配置的一些小东西
+
+=head1 SYNOPSIS
+
+在 MogileFS 安装完成后, 有很几个目录没有自动创建, 还有一些配置文件也不存在. 并且也没有启动用的守护进程. 所以这个用于帮助你在 RedHat 系列的程序中自动完成这些工作.
+
+在你的系统中会生成如下的内容:
+
+    etc/
+    |-- init.d
+    |   |-- mogilefsd
+    |   `-- mogstored
+    `-- mogilefs
+        |-- mogilefs.conf
+        |-- mogilefsd.conf
+        `-- mogstored.conf
+
+上面全生成三个配置文件. 并且生成二个守护进程.
+
+=head1 配置文件
+
+三个配置文件分别是如下的作用
+
+=head2 mogilefs.conf
+
+tracker 所需要指向的地址. 有时大压力的时候我们会配置多个 tracker .
+
+=head2 mogilefsd.conf
+
+主要是使用 db_dsn 来配置你的主数据库的配置. 注意 MogileFS 的 slave 只要你加入进去, 其它 worker 就能自动去读.
+
+=head2 mogstored.conf
+
+这个配置文件是所有存储节点所需要的配置的. 可能需要修改 root 目录指向的位置.
+
+
+=head1 启动守护进程
+
+这个中有主要的二个守护进程
+
+=head2 mogilefsd 
+
+主守护进程, 这个用来启动 tracker 和其它 worker 所需要的进程.
+
+=head2 mogstored
+
+存储节点的进程, 默认打开 7500 对外吐出文件.

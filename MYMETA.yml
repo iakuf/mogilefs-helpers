@@ -1,0 +1,24 @@
+---
+abstract: 'å¸®å© MogileFS éç½®çä¸äºå°ä¸è¥¿'
+author:
+  - 'æ¶å¯ <iakuf@163.com>'
+build_requires:
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 0
+generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: MogileFS-Helpers
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  MogileFS::Server: 0
+resources:
+  repository: https://github.com/iakuf/mogilefs-helpers
+version: 0.01
